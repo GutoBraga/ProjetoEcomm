@@ -1,0 +1,203 @@
+<app-header-secondary></app-header-secondary>
+
+<div style="background: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center my-5">
+        <h1>Informações cadastrais</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-sm-12 col-md-10 col-lg-8">
+      <form name="forminfo">
+        <div class="form-row">
+          <div class="form-group col-md-6 col-12">
+            <label for="inputName">Nome Completo*</label>
+            <input value="{{cliente.nmCliente}}" type="text" class="form-control" id="inputName"
+              placeholder="Nome e Sobrenome" maxlength="65">
+          </div>
+
+          <div class="form-group col-md-6 col-12">
+            <label for="inputCpf">CPF*</label>
+            <input type="text" class="form-control" id="inputCpf"
+              placeholder="000.000.000-00" value="{{cliente.nrCpf | mask:'000.000.000-00'}}">
+          </div>
+
+          <div class="form-group col-md-3 col-6">
+            <label for="inputDtNasc">Data de nascimento*</label>
+            <input value="{{cliente.dtNasc | date:'dd/MM/yyyy'}}" id="inputDtNasc" class="form-control" >
+            <!-- type="date" -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputGen">Gênero*</label>
+            <select value="{{cliente.dsGenero}}" id="inputGen" class="form-control" >
+              <option selected> </option>
+              <option value="MS">Masculino</option>
+              <option VALUE="FM">Feminino</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputTel1">Telefone*</label>
+            <input value={{cliente.nrTelefone1}} type="text" class="form-control" id="inputTel1"
+              placeholder="(00) 0 0000-0000" mask="(00) 0000-0000 ||(00) 0 0000-0000" >
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputTel2">Telefone 2</label>
+            <input value={{cliente.nrTelefone2}} type="text" class="form-control" id="inputTel2"
+              placeholder="(00) 0 0000-0000" mask="(00) 0000-0000 ||(00) 0 0000-0000" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail">E-mail*</label>
+            <input value={{cliente.dsEmail}} type="email" class="form-control" id="inputEmail"
+              placeholder="exemplo@exemplo.com.br" >
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputPassword1">Senha*</label>
+            <input type="password" class="form-control" id="inputPassword1" >
+          </div>
+
+        </div>
+        <div class="form-row float-right">
+          <div class="my-4">
+            <button type="submit" class="btn btn-success">Salvar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center my-3">
+        <h1>Informações de Endereço</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center ">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form name="formendereco">
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputCep">CEP</label>
+            <input type="text" class="form-control" id="inputCep" placeholder="Ex. 03553-000">
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="inputLogradouro">Logradouro</label>
+            <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua">
+          </div>
+          <div class="form-group col-2">
+            <label for="inputNumero">Numero</label>
+            <input type="text" class="form-control" id="inputNumero" placeholder="Ex. Rua">
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="inputComplemento">Complemento</label>
+            <input type="text" class="form-control" id="inputComplemento">
+          </div>
+          <div class="form-group col-6">
+            <label for="inputBairro">Bairro</label>
+            <input type="text" class="form-control" id="inputBairro" placeholder="Ex. Jardim Flores">
+          </div>
+          <div class="form-group col-3">
+            <label for="inputCidade">Cidade</label>
+            <input type="text" class="form-control" id="inputCidade" placeholder="Ex. São Paulo">
+          </div>
+          <div class="form-group col-3">
+            <label for="inputEstado">Estado</label>
+            <select id="inputEstado" class="form-control">
+              <option selected></option>
+              <option>AC</option>
+              <option>AL</option>
+              <option>AP</option>
+              <option>AM</option>
+              <option>BA</option>
+              <option>CE</option>
+              <option>ES</option>
+              <option>ES</option>
+              <option>GO</option>
+              <option>MA</option>
+              <option>MT</option>
+              <option>MS</option>
+              <option>MG</option>
+              <option>PA</option>
+              <option>PB</option>
+              <option>PR</option>
+              <option>PE</option>
+              <option>PI</option>
+              <option>RJ</option>
+              <option>RN</option>
+              <option>RS</option>
+              <option>RO</option>
+              <option>RR</option>
+              <option>SC</option>
+              <option>SP</option>
+              <option>SE</option>
+              <option>TO</option>
+              <option>DF</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-4 justify-content-flex-start">
+            <div class="my-4">
+              <button type="submit" class="btn btn-success">Inserir</button>
+            </div>
+          </div>
+          <div class="form-group col-4 justify-content-center">
+            <div class="my-4">
+              <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            </div>
+          </div>
+          <div class="form-group col-4 ">
+            <div class="my-4">
+              <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center my-3">
+        <h1>Informações de Cartão</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center ">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form name="forminfo">
+        <div class="form-row">
+          <div class="form-group col-md-6 col-12">
+            <label for="inputNumeroCartao">Número do Cartão</label>
+            <input type="text" class="form-control" id="inputNumeroCartao" placeholder="0000.0000.0000.0000">
+          </div>
+          <div class="form-group col-md-6 col-12">
+            <label for="inputNomeCartao">Nome </label>
+            <input type="text" class="form-control" id="inputNomeCartao" placeholder="Nome no cartão">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-4 justify-content-flex-start">
+            <div class="my-4">
+              <button type="submit" class="btn btn-success">Inserir</button>
+            </div>
+          </div>
+          <div class="form-group col-4 justify-content-center">
+            <div class="my-4">
+              <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            </div>
+          </div>
+          <div class="form-group col-4 ">
+            <div class="my-4">
+              <button type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer-secondary></app-footer-secondary>

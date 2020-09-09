@@ -1,0 +1,117 @@
+<app-header-secondary></app-header-secondary>
+
+<div style="background: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center my-5">
+        <h1>CADASTRO</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-sm-12 col-md-10 col-lg-8">
+      <form [formGroup]="validaForm">
+        <div class="form-row">
+          <div class="form-group col-md-6 col-12">
+            <label for="inputName">Nome Completo*</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nome e Sobrenome" maxlength="65"
+              formControlName="name" [(ngModel)]="request.nmCliente">
+              <!-- <div *ngIf="validaForm.controls['name'].invalid && (validaForm.controls['name'].dirty || validaForm.controls['name'].touched)">
+                <pre *ngIf="validaForm.controls['name'].errorss.required">Este campo é obrigatório</pre>
+                <pre [hidden]="!name.errors.minLength">O nome deve conter ao menos 5 caracteres.</pre>
+              </div> -->
+          </div>
+    
+          <div class="form-group col-md-6 col-12">
+            <label for="inputCpf">CPF*</label>
+            <input type="text" mask="000.000.000-00" class="form-control" id="inputCpf" placeholder="000.000.000-00"
+              formControlName="cpf" [(ngModel)]="request.nrCpf">
+              <!-- <div *ngIf="validaForm.controls['cpf'].invalid && (validaForm.controls['cpf'].dirty || validaForm.controls['cpf'].touched)">
+                  <pre *ngIf="validaForm.controls['cpf'].errors.required">Este campo é obrigatório</pre>
+                  <pre [hidden]="!cpf.errors.minLength">O CPF deve conter 11 digitos</pre>
+                  <pre [hidden]="!cpf.errors.pattern">Apenas números são aceitos</pre>
+              </div> -->
+          </div>
+          
+          <div class="form-group col-md-3 col-6">
+            <label for="inputDtNasc">Data de nascimento*</label>
+            <input id="inputDtNasc" class="form-control" type="date" formControlName="dataNasc" [(ngModel)]="request.dtNasc">
+            <!-- <div *ngIf="validaForm.controls['dataNasc'].invalid && (validaForm.controls['dataNasc'].dirty || validaForm.controls['dataNasc'].touched)">
+                <pre *ngIf="validaForm.controls['dataNasc'].errors.required">Este campo é obrigatório</pre>
+            </div> -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputGen">Gênero*</label>
+            <select id="inputGen" class="form-control" formControlName="genero" [(ngModel)]="request.dsGenero">
+              <option selected> </option>
+              <option value="MS">Masculino</option>
+              <option VALUE="FM">Feminino</option>
+            </select>
+            <!-- <div *ngIf="validaForm.controls['genero'].invalid && (validaForm.controls['genero'].dirty || validaForm.controls['genero'].touched)">
+                <pre *ngIf="validaForm.controls['genero'].errors.required">Este campo é obrigatório!</pre>
+            </div> -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputTel1">Telefone*</label>
+            <input type="text" class="form-control" id="inputTel1" placeholder="(00) 0 0000-0000"
+              mask="(00) 0000-0000 ||(00) 0 0000-0000" formControlName="tel1" [(ngModel)]="request.nrTelefone1">
+              <!-- <div *ngIf="validaForm.controls['tel1'].invalid && (validaForm.controls['tel1'].dirty || validaForm.controls['tel1'].touched)">
+                <pre *ngIf="validaForm.controls['tel1'].errors.required">Este campo é obrigatório!</pre>
+                <pre [hidden]="!tel1.errors.minLength">Mínimo de 10 caracteres.</pre>
+                <pre [hidden]="!tel1.errors.maxLength">Máximo de 11 caracteres.</pre>
+                <pre [hidden]="!tel1.errors.pattern">Apenas números são aceitos</pre>
+              </div> -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputTel2">Telefone 2</label>
+            <input type="text" class="form-control" id="inputTel2" placeholder="(00) 0 0000-0000"
+              mask="(00) 0000-0000 ||(00) 0 0000-0000" formControlName="tel2" [(ngModel)]="request.nrTelefone2">
+              <!-- <div *ngIf="validaForm.controls['tel2'].invalid && (validaForm.controls['tel2'].dirty || validaForm.controls['tel2'].touched)">
+                <pre [hidden]="!tel2.errors.minLength">Mínimo de 10 caracteres.</pre>
+                <pre [hidden]="!tel2.errors.maxLength">Máximo de 11 caracteres.</pre>
+                <pre [hidden]="!tel2.errors.pattern">Apenas números são aceitos</pre>
+              </div> -->
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail">E-mail*</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@exemplo.com.br" formControlName="mail" [(ngModel)]="request.dsEmail">
+            <!-- <div *ngIf="validaForm.controls['mail'].invalid && (validaForm.controls['mail'].dirty || validaForm.controls['mail'].touched)">
+                <pre *ngIf="validaForm.controls['mail'].errors.required">Este campo é obrigatório!</pre>
+                <pre [hidden]="!mail.errors.email">Por favor insira um e-mail válido.</pre>
+            </div> -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputPassword1">Senha*</label>
+            <input type="password" class="form-control" id="inputPassword1" formControlName="senha">
+            <!-- <div *ngIf="validaForm.controls['senha'].invalid && (validaForm.controls['senha'].dirty || validaForm.controls['senha'].touched)">
+                <pre *ngIf="validaForm.controls['senha'].errors.required">Este campo é obrigatório!</pre>
+                <pre [hidden]="!senha.errors.minLength">Mínimo de 10 caracteres.</pre>
+                <pre [hidden]="!senha.errors.maxLength">Máximo de 11 caracteres.</pre>
+              </div> -->
+          </div>
+          <div class="form-group col-md-3 col-6">
+            <label for="inputPassword2">Confirmar senha*</label>
+            <input type="password" class="form-control" id="inputPassword2" formControlName="confsenha" [(ngModel)]="request.pwCliente">
+            <!-- <div *ngIf="validaForm.controls['confsenha'].invalid && (validaForm.controls['confsenha'].dirty || validaForm.controls['confsenha'].touched)">
+                <pre *ngIf="validaForm.controls['confsenha'].errors.required">Este campo é obrigatório!</pre>
+                <pre [hidden]="!confsenha.errors.minLength">Mínimo de 8 caracteres.</pre>
+                <pre [hidden]="!confsenha.errors.maxLength">Máximo de 30 caracteres.</pre>
+            </div> -->
+          </div>
+        </div>
+        <div class="form-row float-left">
+            <div class="my-4">
+              <button type="button" class="btn btn-primary">JÁ TENHO CADASTRO</button>
+            </div>
+        </div>
+        <div class="form-row float-right">
+          <div class="my-4">
+            <button [disabled]="validaForm.invalid" type="submit" class="btn btn-success" (click)="registrar()">CADASTRAR</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer-secondary></app-footer-secondary>
